@@ -54,7 +54,7 @@
                     android:src="@drawable/img_avatar" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:orientation="vertical"
                     android:layout_marginTop="20dp">
 
@@ -68,16 +68,43 @@
                     android:background="@drawable/edittext_bg"
                     android:layout_marginBottom="20dp"
                     />
+                    <EditText
+                        android:id="@+id/check_palindrome_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight = "1"
+                        android:hint="Type text palindrome "
+                        android:paddingLeft="16dp"
+                        android:background="@drawable/edittext_bg"
+                        android:layout_marginBottom="20dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/next_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight = "2"
+                            android:text="Next"
+                            android:textColor="@color/colorWhite"
+                            android:background="@drawable/button_bg"
+                            android:textAllCaps="false"
+                            android:layout_marginRight="10dp"/>
+                        <Button
+                            android:id="@+id/check_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight = "1"
+                            android:text="Check"
+                            android:textColor="@color/colorWhite"
+                            android:background="@drawable/button_bg"
+                            android:textAllCaps="false"/>
+                    </LinearLayout>
 
-                <Button
-                    android:id="@+id/next_btn"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight = "1"
-                    android:text="Next"
-                    android:textColor="@color/colorWhite"
-                    android:background="@drawable/button_bg"
-                    android:textAllCaps="false"/>
+
                 </LinearLayout>
 
             </LinearLayout>

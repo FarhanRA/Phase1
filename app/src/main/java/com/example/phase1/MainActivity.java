@@ -83,8 +83,10 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+                Boolean resultIdPrime = data.getBooleanExtra("PRIME",false);
+
                 Toast.makeText(getApplicationContext(),
-                        phoneType,
+                        phoneType + "Id is Prime = "+resultIdPrime,
                         Toast.LENGTH_LONG)
                         .show();
             }

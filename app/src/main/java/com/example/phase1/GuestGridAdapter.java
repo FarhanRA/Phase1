@@ -15,6 +15,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -39,8 +41,8 @@ public class GuestGridAdapter extends ArrayAdapter<GuestModel> {
         ImageView guestAvatar = listitemView.findViewById(R.id.guest_avatar);
         guestFirstNameTxt.setText(guestModel.getFirst_name()+" "+guestModel.getLast_name());
 
-        new DownloadImageTask(guestAvatar).execute(guestModel.getAvatar());
-
+//        new DownloadImageTask(guestAvatar).execute(guestModel.getAvatar());
+        Picasso.get().load(guestModel.getAvatar()).into(guestAvatar);
         return listitemView;
     }
 
@@ -66,4 +68,15 @@ public class GuestGridAdapter extends ArrayAdapter<GuestModel> {
             bmImage.setImageBitmap(result);
         }
     }
+
+//    public void clear() {
+//        items.clear();
+//        notifyDataSetChanged();
+//    }
+//
+//    // Add a list of items -- change to type used
+//    public void addAll(List<Tweet> list) {
+//        items.addAll(list);
+//        notifyDataSetChanged();
+//    }
 }

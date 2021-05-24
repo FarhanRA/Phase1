@@ -34,7 +34,11 @@
                 android:textColor="@color/colorWhite"/>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
-
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <GridView
         android:id="@+id/guest_grid"
         android:layout_width="match_parent"
@@ -45,5 +49,6 @@
         android:numColumns="2"
         android:layout_gravity="center"
         android:gravity="center" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>
