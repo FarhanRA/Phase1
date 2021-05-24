@@ -103,7 +103,7 @@ public class GuestGridActivity extends AppCompatActivity {
                         Log.e(TAG, "firstVisibleItem"+firstVisibleItem);
                         Log.e(TAG, "visibleItemCount"+visibleItemCount);
                         Log.e(TAG, "totalItemCount"+totalItemCount);
-                        if(firstVisibleItem + visibleItemCount <= mTotal && isDownloaded){
+                        if(firstVisibleItem + visibleItemCount <= mTotal && mPerPage < mTotal && isDownloaded){
                             String sPerpage = String.valueOf(mPerPage + 1);
                             url ="https://reqres.in/api/users?page=1&per_page="+sPerpage;
                             guestList.clear();

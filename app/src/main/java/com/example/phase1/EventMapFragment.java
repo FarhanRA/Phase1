@@ -85,9 +85,13 @@ public class EventMapFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
         // Add a marker in Sydney and move the camera
-        LatLng MarkerPosition = new LatLng(-6.929382190125774, 107.60197482916824);
-        map.addMarker(new
-                MarkerOptions().position(MarkerPosition).title("MarkerPosition"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(MarkerPosition));
+        LatLng centerPosition = new LatLng(-6.929382190125774, 107.60197482916824);
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(centerPosition, 17.0f));
+
+        for (int i = 0; i < listEvent.size(); i++) {
+            LatLng eventPosition = new LatLng(listEvent.get(i).getLat(), listEvent.get(i).getLon());
+            map.addMarker(new
+                    MarkerOptions().position(eventPosition).title(listEvent.get(i).getName()));
+        }
     }
 }
