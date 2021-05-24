@@ -24,8 +24,8 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class GuestGridAdapter extends ArrayAdapter<GuestModel> {
-    public GuestGridAdapter(@NonNull Context context, ArrayList<GuestModel> courseModelArrayList) {
-        super(context, 0, courseModelArrayList);
+    public GuestGridAdapter(@NonNull Context context, ArrayList<GuestModel> guestModelArrayList) {
+        super(context, 0, guestModelArrayList);
     }
 
     @NonNull

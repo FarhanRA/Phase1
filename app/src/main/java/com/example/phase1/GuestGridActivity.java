@@ -46,6 +46,8 @@ public class GuestGridActivity extends AppCompatActivity {
     int mTotal;
     int mTotalPages;
 
+    Boolean isDownloaded = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,9 +103,12 @@ public class GuestGridActivity extends AppCompatActivity {
                         Log.e(TAG, "firstVisibleItem"+firstVisibleItem);
                         Log.e(TAG, "visibleItemCount"+visibleItemCount);
                         Log.e(TAG, "totalItemCount"+totalItemCount);
-                        if(firstVisibleItem + visibleItemCount <= mTotal){
-//                            String sPerpage = String.valueOf(mPerPage + 1);
-//                            url ="https://reqres.in/api/users?page=1&per_page="+sPerpage;
+                        if(firstVisibleItem + visibleItemCount <= mTotal && isDownloaded){
+                            String sPerpage = String.valueOf(mPerPage + 1);
+                            url ="https://reqres.in/api/users?page=1&per_page="+sPerpage;
+                            guestList.clear();
+                            new GetGuest().execute();
+                            isDownloaded = false;
                         }
                         String sPerpage = String.valueOf(mPerPage + 1);
                         String sPage = String.valueOf(mPage + 1);
@@ -114,7 +119,7 @@ public class GuestGridActivity extends AppCompatActivity {
                 }
             }
         });
-        
+
 
 
 
@@ -254,8 +259,7 @@ public class GuestGridActivity extends AppCompatActivity {
             adapter = new GuestGridAdapter(GuestGridActivity.this, guestList);
             guestGrid.setAdapter(adapter);
 
-            //cache
-            ((ThisApp)getApplication()).setGuestModels(guestList);
+            isDownloaded = true;
 
             Log.i(TAG, "guestList: " + guestList.toString());
         }
